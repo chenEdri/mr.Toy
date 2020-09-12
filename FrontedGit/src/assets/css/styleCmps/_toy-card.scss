@@ -1,0 +1,46 @@
+.card-toy {
+    @include aspect-ratio(1, 1);
+    
+    font-family: montserrat;
+    font-size: rem(24px);
+    color: $clr1;
+
+    background-color: $clr5;
+
+    .toy-tag {
+        z-index: 1;
+    }
+
+    .toy-image {
+        mix-blend-mode: multiply;
+        filter: grayscale(1);
+    }
+
+    @for $i from 1 through 16 {
+        &:nth-child(#{$i}) {
+            background-color: adjust-hue($clr5, $i*13deg );
+        }     
+}
+
+.body-card{
+flex-grow: 4;
+}
+
+.toy-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+        // SCREEN FOR HIGHLIGHTING TEXT ON IMAGE
+    
+        // &::after {
+        //     content: "";
+        //     background-color: rgba($clr1, .7);
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     top: 0;
+        //     left: 0;
+        // }
+    }
